@@ -8,16 +8,19 @@ Great work boaz!
 // Prints a crowd cheering output.
 public class Cheers {
         public static void main(String[] args) {
-	    String stringOfLetters = args[0];
+	    String originalStringOfLetters = args[0];
             String lowerCaseLetterBank = "abcdefghijklmnopqrstuvwxyz";
             String upperCaseLetterBank = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            for (int index = 0; index < stringOfLetters.length(); index ++) {
-                int indexOfLower = lowerCaseLetterBank.indexOf(stringOfLetters.charAt(index));
-                if (indexOfLower == -1) {
-                        break;
-                } else {
+            String stringOfLetters = "";
+            for (int index = 0; index < originalStringOfLetters.length(); index ++) {
+                int indexOfLower = lowerCaseLetterBank.indexOf(originalStringOfLetters.charAt(index));
+                if (indexOfLower != -1) {
                         char upperCaseChar = upperCaseLetterBank.charAt(indexOfLower);
-                        stringOfLetters = stringOfLetters.substring(0, index) + upperCaseChar + stringOfLetters.substring(index +1);
+                        stringOfLetters = stringOfLetters.substring(0, index);
+                        stringOfLetters = stringOfLetters + upperCaseChar;
+                } else {
+                        stringOfLetters = stringOfLetters.substring(0, index);
+                        stringOfLetters = stringOfLetters + originalStringOfLetters.charAt(index);
                 }
             }
             String anLetters = "AEFHILMNORSX";

@@ -27,7 +27,7 @@ public class Cheers {
             for (int letterIndex = 0; letterIndex < stringOfLetters.length(); letterIndex++) {
                 char curLetter = stringOfLetters.charAt(letterIndex);
                 if (anLetters.indexOf(curLetter) == -1) {
-                        System.out.println("Give me a " + curLetter + ": " + curLetter + "!");
+                        System.out.println("Give me a  " + curLetter + ": " + curLetter + "!");
                 } else {
                         System.out.println("Give me an " + curLetter + ": " + curLetter + "!");
                 }
